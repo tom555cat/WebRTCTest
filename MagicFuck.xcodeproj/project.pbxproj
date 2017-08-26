@@ -15,6 +15,8 @@
 		585B6F331F51959D00900CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585B6F311F51959D00900CAD /* LaunchScreen.storyboard */; };
 		585B6F3E1F51959D00900CAD /* MagicFuckTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6F3D1F51959D00900CAD /* MagicFuckTests.m */; };
 		585B6F491F51959D00900CAD /* MagicFuckUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6F481F51959D00900CAD /* MagicFuckUITests.m */; };
+		585B6F581F5196E200900CAD /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585B6F571F5196E200900CAD /* WebRTC.framework */; };
+		585B6F5A1F5196F800900CAD /* WebRTC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 585B6F571F5196E200900CAD /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		585B6F591F5196EE00900CAD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				585B6F5A1F5196F800900CAD /* WebRTC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		585B6F201F51959D00900CAD /* MagicFuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicFuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585B6F241F51959D00900CAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +66,7 @@
 		585B6F441F51959D00900CAD /* MagicFuckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicFuckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		585B6F481F51959D00900CAD /* MagicFuckUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicFuckUITests.m; sourceTree = "<group>"; };
 		585B6F4A1F51959D00900CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		585B6F571F5196E200900CAD /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = MagicFuck/WebRTC.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585B6F581F5196E200900CAD /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +102,7 @@
 				585B6F3C1F51959D00900CAD /* MagicFuckTests */,
 				585B6F471F51959D00900CAD /* MagicFuckUITests */,
 				585B6F211F51959D00900CAD /* Products */,
+				585B6F561F5196E100900CAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +158,14 @@
 			path = MagicFuckUITests;
 			sourceTree = "<group>";
 		};
+		585B6F561F5196E100900CAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				585B6F571F5196E200900CAD /* WebRTC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +176,7 @@
 				585B6F1C1F51959D00900CAD /* Sources */,
 				585B6F1D1F51959D00900CAD /* Frameworks */,
 				585B6F1E1F51959D00900CAD /* Resources */,
+				585B6F591F5196EE00900CAD /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -430,8 +457,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8VXJWE28Q2;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MagicFuck",
+				);
 				INFOPLIST_FILE = MagicFuck/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "talk-cloud.MagicFuck";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -442,8 +476,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8VXJWE28Q2;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MagicFuck",
+				);
 				INFOPLIST_FILE = MagicFuck/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "talk-cloud.MagicFuck";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
